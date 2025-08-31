@@ -1,21 +1,61 @@
-MIT License
+SPDX-License-Identifier: DACR-1.1
+License-Name: Defensive AI Commercial Rights License, Version 1.1 (DACR-1.1)
+License-Type: Source-available, permissive with defensive AI restrictions
+OSI-Approved: No
 
-Copyright (c) 2025 Maurice McDonald
+Defensive AI Commercial Rights License (DACR) v1.1
+Copyright (c) 2025 Erwin Maurice McDonald
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Definitions
+   “Work” means the content in this repository (including source code, documentation, data, and media) and any Contributions.
+   “You” (or “Your”) means any person or entity exercising rights under this License.
+   “Contribution” means any original work of authorship, including modifications or additions to the Work, intentionally submitted to the Licensor for inclusion in the Work.
+   “Derivative Work” means any work that is based on or derived from the Work or any part of it.
+   “Model” means any machine-learning system (including LLMs, diffusion, embeddings, or other foundation/transformer models) and any dataset used to train or fine-tune such a system.
+   “Prohibited AI Use” means (i) training, fine-tuning, or otherwise improving a Model (or a dataset used to train a Model) using the Work or Substantial Portions of the Work or its outputs; (ii) using the Work to create or improve a product or service whose primary purpose is to compete with or substantially substitute for the Work; (iii) providing the Work or Substantial Portions of it to any third party for the purposes in (i) or (ii).
+   “Substantial Portion” means any portion of the Work whose use would reasonably allow reconstruction, replication, or systematic extraction of the Work’s core material.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. Grant of Rights
+   Subject to the Conditions and Restrictions below, the Licensor grants You a worldwide, royalty-free, non-exclusive, irrevocable (except as stated herein) license to:
+   (a) use, copy, display, perform, and prepare Derivative Works of the Work;
+   (b) distribute and sublicense the Work and Derivative Works, including for commercial purposes;
+   (c) host the Work as part of applications or services You operate for Yourself or Your customers.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. Conditions
+   3.1 Attribution. You must retain the copyright notice and this License in all copies or substantial portions of the Work and provide reasonable attribution to the Licensor in user-facing docs or “About” screens where feasible.
+   3.2 Notice of Changes. If You modify the Work, You must clearly identify material changes and the date of such changes.
+   3.3 License Copy. All distributions of the Work or Derivative Works must include a copy of this License.
+
+4. Defensive AI Restrictions
+   4.1 You may not engage in any Prohibited AI Use without the Licensor’s prior written permission.
+   4.2 Research & Evaluation Safe Harbor. Non-production evaluation that does not update Model weights (e.g., prompt-level testing/inference only) is permitted.
+   4.3 API Exception. Using the Work in applications that call third-party AI APIs is permitted, provided You do not (a) contribute the Work, its datasets, or Substantial Portions to retraining corpora, or (b) grant the third party rights to use the Work to train or fine-tune Models.
+   4.4 Data Extracts. Systematic extraction of the Work to build replacement datasets or courseware is a Prohibited AI Use.
+
+5. Patents
+   5.1 Patent Grant. Subject to the terms of this License, Licensor grants You a non-exclusive, worldwide, royalty-free patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work.
+   5.2 Patent Retaliation. If You or Your affiliate initiate patent litigation (including a cross-claim or counterclaim) alleging that the Work or a Contribution infringes a patent, Your license to the Work terminates as of the date the litigation is filed.
+
+6. Trademarks
+   This License does not grant permission to use the Licensor’s trade names, trademarks, service marks, or logos.
+
+7. Compliance; Export; Privacy
+   You must comply with all applicable laws and regulations, including export controls, sanctions, and data-protection laws, when using or distributing the Work.
+
+8. Termination
+   8.1 Automatic Termination. Any use in violation of Sections 3 or 4 terminates Your rights automatically.
+   8.2 Cure Period. If You cure the violation within 30 days of discovery and notify the Licensor in writing of the cure, Your license may be reinstated at the Licensor’s discretion.
+   8.3 Effect of Termination. Upon termination, You must stop using and distributing the Work and Derivative Works; existing end-user agreements already granted by You in compliance with this License remain in effect.
+
+9. Disclaimer of Warranty
+   THE WORK IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+10. Limitation of Liability
+   IN NO EVENT WILL THE LICENSOR BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE WORK OR THIS LICENSE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+11. Miscellaneous
+   11.1 No Waiver. Failure to enforce any provision is not a waiver.
+   11.2 Severability. If any provision is unenforceable, the remaining provisions will remain in effect.
+   11.3 Entire Agreement. This License is the entire agreement concerning the Work.
+
+END OF TERMS
