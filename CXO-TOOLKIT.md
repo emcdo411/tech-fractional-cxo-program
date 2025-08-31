@@ -161,11 +161,11 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-  A["Risk Register<br/>module3_cyber_risk.md"] --> B["Quantify Impact (USD)<br/>module2_finance.md"]
-  B --> C["Prioritize RICE/WSJF<br/>prioritization_rubric.md"]
+  A["Risk Register<br/>module3_cyber_risk.md"] --> B["Quantify Impact — USD<br/>module2_finance.md"]
+  B --> C["Prioritize — RICE or WSJF<br/>prioritization_rubric.md"]
   C --> D["Budget & Sequencing<br/>finops_playbook.md"]
   D --> E["Benefits Tracking<br/>benefits_tracker.csv"]
-  E --> F["Board/Investor Roll-up<br/>board_pack_template.md + investor_update_template.md"]
+  E --> F["Board / Investor Roll-up<br/>board_pack_template.md + investor_update_template.md"]
 ```
 
 ### Crisis → Communications Command
@@ -253,43 +253,43 @@ flowchart TD
 
 ### Governance & Decision Rights
 
-* **Charter & DoA:** [tools/governance\_charter.md](tools/governance_charter.md), [tools/delegation\_of\_authority.md](tools/delegation_of_authority.md)
-* **Decision Rights & Memos:** [tools/decision\_rights\_raci.md](tools/decision_rights_raci.md), [tools/decision\_memo\_one\_pager.md](tools/decision_memo_one_pager.md), [tools/decision\_log.csv](tools/decision_log.csv)
+* **Charter & DoA:** `tools/governance_charter.md`, `tools/delegation_of_authority.md`
+* **Decision Rights & Memos:** `tools/decision_rights_raci.md`, `tools/decision_memo_one_pager.md`, `tools/decision_log.csv`
 
 ### Finance, KPIs & Prioritization
 
-* **OKRs/KPIs:** [tools/okr\_tree.yaml](tools/okr_tree.yaml), [tools/kpi\_scorecard.csv](tools/kpi_scorecard.csv), [tools/kpi\_dictionary.md](tools/kpi_dictionary.md)
-* **Prioritization & Benefits:** [tools/prioritization\_rubric.md](tools/prioritization_rubric.md), [tools/portfolio\_kanban.md](tools/portfolio_kanban.md), [tools/benefits\_tracker.csv](tools/benefits_tracker.csv)
-* **FinOps:** [tools/finops\_playbook.md](tools/finops_playbook.md), [tools/cost\_guardrails.md](tools/cost_guardrails.md)
+* **OKRs/KPIs:** `tools/okr_tree.yaml`, `tools/kpi_scorecard.csv`, `tools/kpi_dictionary.md`
+* **Prioritization & Benefits:** `tools/prioritization_rubric.md`, `tools/portfolio_kanban.md`, `tools/benefits_tracker.csv`
+* **FinOps:** `tools/finops_playbook.md`, `tools/cost_guardrails.md`
 
 ### Security, Risk & Data Governance
 
-* **Risk & Appetite:** [tools/risk\_appetite\_statement.md](tools/risk_appetite_statement.md), [tools/raid\_log.csv](tools/raid_log.csv)
-* **Data & Privacy:** [tools/data\_classification\_policy.md](tools/data_classification_policy.md), [tools/data\_retention\_schedule.md](tools/data_retention_schedule.md), [tools/privacy\_impact\_assessment.md](tools/privacy_impact_assessment.md)
-* **Identity & Access:** [tools/identity\_governance\_jml.md](tools/identity_governance_jml.md), [tools/access\_review\_procedure.md](tools/access_review_procedure.md)
+* **Risk & Appetite:** `tools/risk_appetite_statement.md`, `tools/raid_log.csv`
+* **Data & Privacy:** `tools/data_classification_policy.md`, `tools/data_retention_schedule.md`, `tools/privacy_impact_assessment.md`
+* **Identity & Access:** `tools/identity_governance_jml.md`, `tools/access_review_procedure.md`
 
 ### Resilience & Continuity
 
-* **BCP/DR:** [tools/bcp\_dr\_plan.md](tools/bcp_dr_plan.md)
-* **Change & CAB:** [tools/change\_calendar.md](tools/change_calendar.md), [tools/cab\_checklist.md](tools/cab_checklist.md)
+* **BCP/DR:** `tools/bcp_dr_plan.md`
+* **Change & CAB:** `tools/change_calendar.md`, `tools/cab_checklist.md`
 
 ### Vendors & Commercials
 
-* **Vendor Pack:** [vendor\_pack/msa\_template.md](vendor_pack/msa_template.md), [vendor\_pack/sow\_template.md](vendor_pack/sow_template.md), [vendor\_pack/sla\_template.md](vendor_pack/sla_template.md), [vendor\_pack/dpa\_template.md](vendor_pack/dpa_template.md)
+* **Vendor Pack:** `vendor_pack/msa_template.md`, `vendor_pack/sow_template.md`, `vendor_pack/sla_template.md`, `vendor_pack/dpa_template.md`
 
 ### Program Control & Architecture
 
-* **Architecture & Capability:** [tools/adr\_template.md](tools/adr_template.md), [tools/capability\_heatmap.md](tools/capability_heatmap.md)
-* **Service Catalog:** [tools/service\_catalog.md](tools/service_catalog.md), [tools/slo\_sla\_baselines.md](tools/slo_sla_baselines.md)
+* **Architecture & Capability:** `tools/adr_template.md`, `tools/capability_heatmap.md`
+* **Service Catalog:** `tools/service_catalog.md`, `tools/slo_sla_baselines.md`
 
 ### Service Levels & Trust
 
-* **Customer Trust:** [tools/customer\_trust\_pack.md](tools/customer_trust_pack.md)
+* **Customer Trust:** `tools/customer_trust_pack.md`
 
 ### Executive Communications
 
-* **Board & Investor:** [tools/board\_pack\_template.md](tools/board_pack_template.md), [tools/investor\_update\_template.md](tools/investor_update_template.md)
-* **Narratives & Calendar:** [tools/executive\_narrative\_template.md](tools/executive_narrative_template.md), [tools/comms\_calendar.md](tools/comms_calendar.md)
+* **Board & Investor:** `tools/board_pack_template.md`, `tools/investor_update_template.md`
+* **Narratives & Calendar:** `tools/executive_narrative_template.md`, `tools/comms_calendar.md`
 
 ---
 
@@ -379,9 +379,9 @@ code syllabus/module4_operating_rhythm.md tools/board_pack_template.md tools/inv
 Licensed under **DACR-1.1** — see `LICENSE.md`.
 Copyright (c) **2025 Erwin Maurice McDonald**.
 
-```
+````
 
-**What changed (re: parsing):** node labels are now wrapped in quotes and special characters (`<br/>`, parentheses, `+`, etc.) are inside those quotes; replaced the raw `$` with **(USD)** to avoid parser quirks.
+**Tip:** When pasting Mermaid into GitHub, always wrap code blocks with ```mermaid and keep labels inside quotes if they contain spaces, `<br/>`, dashes, or punctuation.
 ::contentReference[oaicite:0]{index=0}
-```
+````
 
