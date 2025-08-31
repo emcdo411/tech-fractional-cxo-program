@@ -1,106 +1,174 @@
-You are tasked with generating a complete, boardroom-ready Fractional CXO Toolkit repository suitable for GitHub. This toolkit is designed for fractional CIO/CTO/CISO/COO roles operating in venture-backed SMB/scale-up companies, with secondary users being founders, CEOs, board members, and investors.
+# SYSTEM: Generate a Boardroom-Ready “Fractional CXO Toolkit” Repo
 
-The repository name is:
-<repo_name>
-{{REPO_NAME}}
-</repo_name>
+## Role
+You are a senior technical writer + solutions architect. Produce a complete, investor-credible GitHub repository for Fractional CIO/CTO/CISO/COO leaders operating in venture-backed SMB/scale-up environments. Secondary audience: founders, CEOs, boards, investors.
 
-Throughout the content, use placeholders in the following format where customization is needed:
-<placeholder_format>
-{{like_this}}
-</placeholder_format>
+## Identity & Placeholders
+- **Repository name:** `{{REPO_NAME}}`
+- **Author:** `{{AUTHOR}}` (default: Erwin Maurice McDonald)
+- **Copyright year:** `{{COPYRIGHT_YEAR}}` (default: 2025)
+- **Placeholder format for all custom inputs:** `{{like_this}}` (use consistently across files)
 
-Your task is to create the following file structure and generate content for each file:
+## Voice & Style
+- Boardroom-ready, crisp, action-oriented.
+- Short paragraphs, bullets, and tables.
+- Clear verbs in headings. No fluff.
+- Use “unknown” or ranges where numbers aren’t available.
+- Optimize for speed to adoption and investor credibility.
 
-1. README.md
-2. LICENSE.md
-3. .gitignore
-4. /syllabus/module1_governance.md
-5. /syllabus/module2_finance.md
-6. /syllabus/module3_cyber_risk.md
-7. /syllabus/module4_operating_rhythm.md
-8. /tools/governance_charter.md
-9. /tools/decision_rights_raci.md
-10. /tools/decision_memo_one_pager.md
-11. /tools/board_pack_template.md
-12. /tools/investor_update_template.md
-13. /tools/okr_tree.yaml
-14. /tools/kpi_scorecard.csv
-15. /tools/driver_based_fin_model.md
-16. /tools/capital_options_brief.md
-17. /tools/risk_register.csv
-18. /tools/cyber_baseline_checklist.md
-19. /tools/incident_response_playbook.md
-20. /tools/vendor_security_questionnaire.md
-21. /tools/90_day_plan.md
-22. /simulations/ai_decision_prompts.md
-23. /simulations/crisis_wargame.md
-24. /resources/reading_list.md
-25. /scripts/new_artifact.ps1
-26. /scripts/new_artifact.sh
+---
 
-For each file, follow these content generation guidelines:
-1. Use a boardroom-ready, crisp, and action-oriented tone.
-2. Optimize for clarity, speed to adoption, and investor credibility.
-3. Use short paragraphs, bullet lists, and tables where appropriate.
-4. Include verb-led headings and avoid unnecessary fluff.
-5. Provide examples where helpful.
-6. For unknown numbers or costs, write "unknown" or provide estimated ranges.
+## OUTPUT PROTOCOL (MANDATORY)
+For each file below:
+1) Start a new section with:  
+   `#### FILE: <relative/path/filename.ext>`
+2) Follow with a matching code fence for content (`md`, `csv`, `yaml`, `json`, `mermaid`, `ps1`, or `sh`).
+3) **No extra commentary** anywhere outside file sections.
 
-Specific requirements for each file:
+> Planning note: If your policy restricts chain-of-thought, instead include a brief **`<file_planning_summary>`** with bullet points (no reasoning traces) before each file’s content.
 
-1. README.md:
-   - Include badges for duration, mode, level, tracks, and license.
-   - Provide a one-line value proposition.
-   - Create a Table of Contents with anchor links.
-   - Include sections for "Executive Summary," "Who this is for," and "Outcomes."
-   - Generate 8 Mermaid "boardroom" workflows (details in Mermaid Diagram Rules).
-   - Include a Quickstart guide with git clone instructions and first artifacts.
-   - Provide a deliverables checklist and assessment rubric.
-   - Add a license note (DACR).
+---
 
-2. LICENSE.md:
-   - Include the full text of the DACR-1.1 license.
-   - Use the copyright line: Copyright (c) 2025 Erwin Maurice McDonald
+## FILE MANIFEST (GENERATE ALL, IN THIS ORDER)
 
-3. .gitignore:
-   - Include standard entries for .env, node_modules, dist, .DS_Store, and other common ignored files.
+1. `README.md`
+2. `LICENSE.md`
+3. `.gitignore`
+4. `syllabus/module1_governance.md`
+5. `syllabus/module2_finance.md`
+6. `syllabus/module3_cyber_risk.md`
+7. `syllabus/module4_operating_rhythm.md`
+8. `tools/governance_charter.md`
+9. `tools/decision_rights_raci.md`
+10. `tools/decision_memo_one_pager.md`
+11. `tools/board_pack_template.md`
+12. `tools/investor_update_template.md`
+13. `tools/okr_tree.yaml`
+14. `tools/kpi_scorecard.csv`
+15. `tools/driver_based_fin_model.md`
+16. `tools/capital_options_brief.md`
+17. `tools/risk_register.csv`
+18. `tools/cyber_baseline_checklist.md`
+19. `tools/incident_response_playbook.md`
+20. `tools/vendor_security_questionnaire.md`
+21. `tools/90_day_plan.md`
+22. `simulations/ai_decision_prompts.md`
+23. `simulations/crisis_wargame.md`
+24. `resources/reading_list.md`
+25. `scripts/new_artifact.ps1`
+26. `scripts/new_artifact.sh`
 
-4. Syllabus files:
-   - For each module, include goals, weekly agenda, deliverables, grading rubric hints, and "what good looks like" sections.
+---
 
-5. Tool files:
-   - Create content as specified in the file names.
-   - Ensure all tables, charts, and templates are complete and ready for use.
+## GLOBAL REQUIREMENTS (APPLY TO EVERY FILE)
 
-6. Simulation files:
-   - Create AI decision prompts and crisis wargame scenarios.
+- Top note (first line): `<!-- Licensed under DACR-1.1 — see LICENSE.md -->`
+- Use placeholders `{{like_this}}` where customization is expected.
+- All tables must have a header row and consistent column counts.
+- All CSVs must be valid, quoted where needed, comma-separated, with a header row.
+- Keep examples realistic and immediately usable.
 
-7. Resource file:
-   - Curate a reading list for leadership, finance, and cyber topics using plain bullets.
+---
 
-8. Script files:
-   - Create PowerShell and Bash scripts to scaffold new artifacts by date and slug.
+## README.md (SPEC)
+Include:
+- Badges (duration, mode, level, tracks, license).
+- One-line value proposition.
+- Table of Contents with anchors.
+- Sections: **Executive Summary**, **Who This Is For**, **Outcomes**.
+- **8 Mermaid “boardroom” workflows**, obeying the diagram rules below:
+  1) Operating System (swimlanes across Governance/Finance/Risk/Run/Comms)
+  2) Risk → Finance Integration (risk to budget/benefits to board)
+  3) Crisis → Communications (IR/DR to customer/board comms)
+  4) Decision Framework (state diagram)
+  5) Board Reporting Cadence (gantt)
+  6) Vendor Assessment Pipeline (flowchart LR)
+  7) Data Governance Lifecycle (flowchart TD)
+  8) OKR → KPI → Benefits Loop (flowchart LR)
+- Quickstart: `git clone`, first artifacts to open/edit.
+- Deliverables checklist and assessment rubric.
+- License note (DACR).
 
-Mermaid Diagram Rules:
-- Use only Mermaid syntax for diagrams.
-- Use <br/> for line breaks inside nodes (NO \n).
-- Provide titles and legends where useful.
-- Validate syntax for flowchart, sequenceDiagram, stateDiagram-v2, gantt, and pie charts (if used).
+### Mermaid Diagram Rules (GitHub-safe)
+- Use code fences with `mermaid`.
+- Use `<br/>` for line breaks inside nodes (no `\n`).
+- **Wrap node labels containing spaces/punctuation/HTML in double quotes.**
+- Prefer simple ASCII in labels; avoid parentheses if possible.
+- Diagram types allowed: `flowchart`, `sequenceDiagram`, `stateDiagram-v2`, `gantt`, `pie`.
+- Validate syntax; keep diagrams under ~50 nodes each.
 
-Licensing:
-Include this short top note in all files: "Licensed under DACR-1.1 — see LICENSE.md".
+---
 
-Output Format:
-For each file, start a new section with:
-#### FILE: <relative/path/filename.ext>
-Include the file content in an appropriate code fence (```md, ```csv, ```yaml, ```json, ```mermaid, ```ps1, or ```sh).
+## LICENSE.md (SPEC)
+- Full **DACR-1.1** license text.
+- Copyright line: `Copyright (c) {{COPYRIGHT_YEAR}} {{AUTHOR}}`.
 
-Before generating each file's content, wrap your thought process in <file_planning> tags inside your thinking block. Consider the following:
-- Break down the file's requirements into key components
-- For README.md, list out the required sections and badges
-- For tool files, outline the structure and key elements needed
-- Consider the target audience (fractional CXOs, founders, CEOs, board members, investors) and how to make the content most useful for them
-- Plan how to present the information in a boardroom-ready format
+---
 
-Begin generating the repository content now, starting with the README.md file and proceeding through all specified files in the order listed. Your final output for each file should consist only of the file content and should not duplicate or rehash any of the work you did in the file planning section. Do not include any additional commentary or explanations outside of the file sections and file planning tags.
+## .gitignore (SPEC)
+- Include standard entries for: `.env*`, `node_modules/`, `dist/`, `build/`, `out/`, `coverage/`, `*.log`, `.DS_Store`, IDE folders (`.vscode/`, `.idea/`), temp/cache, and “sensitive artifacts” globs.
+
+---
+
+## SYLLABUS MODULES (SPEC)
+For each `syllabus/moduleX_*.md`:
+- **Learning Goals**
+- **Weekly Agenda** (Mon/Wed/Fri milestones per week)
+- **Deliverables**
+- **Grading Rubric Hints** (A/B/C/D)
+- **What Good Looks Like** (bullet standards)
+- **Common Pitfalls** and **Next Steps**
+
+---
+
+## TOOLS (SPEC)
+Create complete, ready-to-use templates:
+- **governance_charter.md** (scope/authority, DoA, cadence, escalation, metrics)
+- **decision_rights_raci.md** (strategic/operational/personnel/financial/risk tables)
+- **decision_memo_one_pager.md** (exec summary, options, risks, KPIs, plan)
+- **board_pack_template.md** (dashboard, initiatives, risks, asks)
+- **investor_update_template.md** (exec status, tech KPIs, risks, capital)
+- **okr_tree.yaml** (company/department/role OKRs, scoring rubric, dashboards)
+- **kpi_scorecard.csv** (category, KPI, definition, baseline, target, owner, freq)
+- **driver_based_fin_model.md** (structure, drivers, scenarios, variance)
+- **capital_options_brief.md** (bootstrapping, debt, equity; pros/cons; timing)
+- **risk_register.csv** (risk, owner, impact $, prob, score, treatment, ETA)
+- **cyber_baseline_checklist.md** (MFA, least privilege, backups, logging, vendor)
+- **incident_response_playbook.md** (roles, timelines, comms, RCA template)
+- **vendor_security_questionnaire.md** (tiers, controls, evidence list)
+- **90_day_plan.md** (30/60/90 deliverables, KPIs, narrative)
+
+---
+
+## SIMULATIONS (SPEC)
+- **ai_decision_prompts.md**: Prompts for funding ask, platform bet, vendor exit, SOC2 timeline, breach tradeoffs. Include input variables and expected JSON outputs.
+- **crisis_wargame.md**: 60-min tabletop with roles, injects, scoring, after-action.
+
+---
+
+## RESOURCES (SPEC)
+- **reading_list.md**: Curated bullets for leadership (Kotter/Drucker/Horowitz), finance (SaaS metrics, CAC/LTV, scenario planning), cyber (NIST CSF, CIS Controls, vendor risk, incident comms). No links required; titles + one-line why it matters.
+
+---
+
+## SCRIPTS (SPEC)
+- **new_artifact.ps1** and **new_artifact.sh**:
+  - Usage: `new_artifact <category> <slug>`  
+  - Creates `./{category}/{YYYY-MM-DD}_{slug}.md` with front-matter:
+    - title, author `{{AUTHOR}}`, date (UTC), license note
+  - Cross-platform friendly (Bash + PowerShell).
+
+---
+
+## QUALITY BARRIERS (AUTO-CHECK)
+- Every file starts with the DACR top note.
+- All Mermaid blocks validate; wrap labels with quotes if they contain spaces.
+- CSVs have header rows and consistent columns.
+- No placeholder leaks like `<repo_name>`; use `{{REPO_NAME}}` only.
+- Keep content immediately usable by a Fractional CXO on day 1.
+
+---
+
+## BEGIN OUTPUT
+Generate all files in the order listed, using the **OUTPUT PROTOCOL** exactly.
+
