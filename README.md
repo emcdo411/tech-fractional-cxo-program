@@ -96,56 +96,209 @@ fractional-tech-cxo-excellence/
 
 ---
 
-## 🔧 Working Method (Daily/Weekly)
+## 🔧 Working Method — **Boardroom Workflows**
 
-### A) Daily Execution Loop
+> All diagrams below use `<br/>` inside nodes and render natively on GitHub.
+
+### 1) Program Operating Model — Ecosystem View
 
 ```mermaid
 flowchart LR
-  A["Intake:<br/>objective & constraints"] --> B["Analyze:<br/>data, risks, stakeholders"]
-  B --> C["Options:<br/>2–3 viable paths"]
-  C --> D["Decision Memo:<br/>one-page brief"]
-  D --> E["Action:<br/>tasks, owners, ETA"]
-  E --> F["Review:<br/>OKR/KPI update, risks"]
-  F --> A
+  %% Styling
+  classDef org fill:#0b4,color:#fff,stroke:#083,stroke-width:1.2;
+  classDef prog fill:#036,color:#fff,stroke:#024,stroke-width:1.2;
+  classDef mkts fill:#555,color:#fff,stroke:#333,stroke-width:1.2;
+  classDef out  fill:#600,color:#fff,stroke:#400,stroke-width:1.2;
+
+  subgraph ORG["Venture / Client Org"]
+    O1["Strategy & OKRs<br/>North Star • Guardrails"]:::org
+    O2["Exec Team<br/>Ops • Eng • GTM"]:::org
+    O3["Risk & Controls<br/>Register • SLAs"]:::org
+  end
+
+  subgraph PROG["This Program (Your Repo)"]
+    P1["Syllabus<br/>4 Modules"]:::prog
+    P2["Artifacts<br/>Charter • Model • Playbooks"]:::prog
+    P3["Reviews<br/>Board Pack • Investor Update"]:::prog
+  end
+
+  subgraph MARKET["Stakeholders"]
+    S1["Founders • Investors"]:::mkts
+    S2["Customers • Partners"]:::mkts
+    S3["Advisors • Counsel"]:::mkts
+  end
+
+  O1 <---> P1
+  O2 <---> P2
+  O3 <---> P2
+  P3 --> S1
+  O2 --> S2
+  S3 -. advisory .- O1
+
+  OUT["Outcomes<br/>Better Decisions • Faster Execution • Lower Risk"]:::out
+  O1 & O2 & O3 & P1 & P2 & P3 --> OUT
 ```
 
-### B) Weekly Operating Rhythm (WBR → MBR → Board)
+### 2) Monthly Governance & Decision Cycle (Sequence)
 
 ```mermaid
-flowchart LR
-  WBR["Weekly Business Review<br/>(ops metrics, incidents)"] --> MBR["Monthly Business Review<br/>(finance, roadmap, risk)"]
-  MBR --> BOARD["Board/Advisory<br/>(strategy, funding, key hires)"]
-  BOARD --> WBR
+sequenceDiagram
+  autonumber
+  participant CXO as Fractional CXO
+  participant CH as Chair/Mentor
+  participant EX as Exec Team
+  participant BD as Board/Investors
+
+  CXO->>CH: Pre-brief<br/>goals • constraints • risks
+  CH-->>CXO: Challenge<br/>assumptions • decision memo frame
+  CXO->>EX: Options review<br/>owners • costs • ETA
+  CXO->>BD: Decision memo<br/>ask • ROI • risk deltas
+  BD-->>CXO: Approve/Refine<br/>guardrails • milestones
+  CXO->>EX: Execute<br/>plan • budget • KPIs
+  Note over CXO,CH: 1:1 coaching • lessons learned • backlog refresh
 ```
 
-### C) Program Blueprint (Modules → Capstone)
+### 3) Strategy-to-Execution Pipeline with Risk & ROI Gates
 
 ```mermaid
 flowchart LR
-  classDef mod fill:#0b4,stroke:#083,stroke-width:1,color:#fff;
-  classDef art fill:#036,stroke:#024,stroke-width:1,color:#fff;
-  classDef cap fill:#600,stroke:#400,stroke-width:1,color:#fff;
+  classDef gate fill:#222,color:#fff,stroke:#111,stroke-width:1;
+  classDef step fill:#0b4,color:#fff,stroke:#083,stroke-width:1;
+  classDef risk fill:#820000,color:#fff,stroke:#5a0000,stroke-width:1;
+  classDef fin  fill:#004e82,color:#fff,stroke:#003b63,stroke-width:1;
 
-  M1["Module 1<br/>Governance"]:::mod --> M2["Module 2<br/>Finance"]:::mod
-  M2 --> M3["Module 3<br/>Cyber & Risk"]:::mod
-  M3 --> M4["Module 4<br/>Ops & Leadership"]:::mod
+  IN["Intake<br/>Problem • Context"]:::step --> OPT["Options<br/>min 3 credible paths"]:::step --> ANA["Analysis<br/>data • comps • risks"]:::step
+  ANA --> RG{"Risk Gate<br/>impact × likelihood"}:::risk
+  ANA --> ROI{"ROI Gate<br/>NPV • payback • sensitivity"}:::fin
+  RG -->|Pass| MEMO["Decision Memo<br/>1-pager"]:::step
+  ROI -->|Pass| MEMO
+  RG -->|Rework| OPT
+  ROI -->|Rework| OPT
+  MEMO --> DEC{"Approve?"}:::gate
+  DEC -->|Yes| EXEC["Execution<br/>owners • budget • ETA"]:::step --> REV["Review<br/>OKRs • KPIs"]:::step
+  DEC -->|No/Defer| BKLG["Backlog<br/>criteria to revisit"]:::step
+  REV --> IN
+```
 
-  A1{{"Charter + RACI"}}:::art
-  A2{{"Financial Model + KPI Tree"}}:::art
-  A3{{"Risk Register + Playbook"}}:::art
-  A4{{"Board Pack + 90-Day Plan"}}:::art
+### 4) OKR Cascade — From North Star to Metrics
 
-  M1 --> A1
-  M2 --> A2
-  M3 --> A3
-  M4 --> A4
+```mermaid
+flowchart TB
+  classDef head fill:#1f2937,color:#fff,stroke:#111;
+  classDef node fill:#0b4,color:#fff,stroke:#083;
+  classDef met  fill:#036,color:#fff,stroke:#024;
 
-  CAP(["Capstone:<br/>Board Simulation & Funding Ask"]):::cap
-  A1 --> CAP
-  A2 --> CAP
-  A3 --> CAP
-  A4 --> CAP
+  NS["Company North Star<br/>mission • advantage"]:::head
+  O1["Company OKR 1<br/>strategic outcome"]:::node
+  O2["Company OKR 2<br/>strategic outcome"]:::node
+  D1["Dept OKRs<br/>Eng • GTM • Ops"]:::node
+  I1["Initiatives<br/>projects • epics"]:::node
+  K1["KPIs & Targets<br/>leading • lagging"]:::met
+
+  NS --> O1 --> D1 --> I1 --> K1
+  NS --> O2
+```
+
+### 5) Cyber Risk Playbook (State Machine)
+
+```mermaid
+stateDiagram-v2
+  [*] --> Detect
+  Detect: Signals<br/>alerts • peer intel • audits
+  Detect --> Triage: Severity assess • scope
+  Triage --> Contain: High/Critical
+  Triage --> Monitor: Low/Medium
+  Contain --> Eradicate: Root cause • vendor actions
+  Eradicate --> Recover: Services • data • comms
+  Recover --> Learn: Post-mortem • control gaps
+  Learn --> [*]
+  Monitor --> Learn: Trend review • backlog
+```
+
+### 6) Financial Runway Scenario (Driver-Based)
+
+```mermaid
+flowchart LR
+  classDef drv fill:#0b4,color:#fff,stroke:#083;
+  classDef calc fill:#036,color:#fff,stroke:#024;
+  classDef out fill:#600,color:#fff,stroke:#400;
+
+  D1["Inputs<br/>ARR • CAC • LTV • Churn"]:::drv --> C1["Model<br/>burn • runway • payback"]:::calc
+  D2["Levers<br/>price • mix • hiring plan"]:::drv --> C1
+  C1 --> O1["Outputs<br/>runway months • covenants risk"]:::out
+  C1 --> O2["Board View<br/>p50 • p95 bands"]:::out
+```
+
+### 7) Portfolio Artifact Flow — From Template to Board Pack
+
+```mermaid
+flowchart LR
+  classDef t fill:#1f2937,color:#fff,stroke:#111;
+  classDef a fill:#0b4,color:#fff,stroke:#083;
+  classDef r fill:#036,color:#fff,stroke:#024;
+
+  T1["Templates<br/>charter • model • playbooks"]:::t --> A1["Draft Artifacts<br/>repo PRs"]:::a --> R1["Review Cycle<br/>comments • revisions"]:::r --> A2["Approved Artifacts<br/>versioned"]:::a --> P1["Board Pack<br/>decision ready"]:::r
+```
+
+### 8) Role & Responsibility Snapshot (RACI-style)
+
+```mermaid
+flowchart LR
+  classDef role fill:#1f2937,color:#fff,stroke:#111;
+  classDef resp fill:#0b4,color:#fff,stroke:#083;
+
+  subgraph Roles
+    CXO["Fractional CXO"]:::role
+    FD["Founder/CEO"]:::role
+    CH["Chair/Mentor"]:::role
+    EX["Exec Team"]:::role
+    BD["Board/Investors"]:::role
+  end
+
+  CXO --> R1["Decision Memos<br/>options • risk • ROI"]:::resp
+  CH  --> R2["Challenge • 1:1<br/>cadence • accountability"]:::resp
+  EX  --> R3["Execution<br/>owners • KPIs"]:::resp
+  FD  --> R4["Vision • Guardrails<br/>talent • budget"]:::resp
+  BD  --> R5["Governance<br/>capital • strategy"]:::resp
+
+  R1 --> R3
+  R4 --> CXO
+  R5 --> CXO
+```
+
+### 9) 90-Day Onboarding Timeline (Gantt)
+
+```mermaid
+gantt
+  title 90-Day Fractional CXO Onboarding
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b %d
+
+  section Foundations
+  Charter • Decision Rights         :a1, 2025-09-01, 10d
+  OKR Draft • KPI Tree              :a2, after a1, 7d
+
+  section Finance & Risk
+  Driver-Based Model • Runway       :a3, after a2, 10d
+  Risk Register • Cyber Baseline    :a4, after a2, 10d
+
+  section Execution
+  Initiative Planning • Owners      :a5, after a3, 10d
+  Board Pack v1                     :milestone, m1, 2025-10-05, 1d
+
+  section Operate & Review
+  WBR/MBR Cadence                   :a6, after m1, 20d
+  Investor Update v1                :milestone, m2, 2025-10-30, 1d
+```
+
+### 10) Commitment Profile (Pie)
+
+```mermaid
+pie title "Program Commitment Mix (Illustrative)"
+  "Portfolio Artifact Creation" : 40
+  "Stakeholder Comms & Board"   : 20
+  "Finance & Scenario Work"     : 20
+  "Cyber/Risk Hardening"        : 20
 ```
 
 ---
@@ -237,4 +390,6 @@ Avoid committing secrets or private customer data. Use synthetic or redacted exa
 * **Portable:** Everything lives in GitHub for shareable proof of capability
 
 ---
+
+```
 
