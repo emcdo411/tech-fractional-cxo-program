@@ -115,37 +115,198 @@ Use Vistage for Chair-led structure and SMB/upper-mid market breadth; add an ind
 
 ## Diagrams
 
-### a) Ecosystem Map
+### 1) Operating Model — Fractional CXO ↔ Vistage Ecosystem
 ```mermaid
 flowchart LR
-  A["Fractional CXO<br/>(CIO/CTO/CISO)"] --> B["Vistage Chair<br/>facilitator & coach"]
-  A --> C["Peer Group<br/>12–16 executives"]
-  B --> C
-  C --> D["Monthly Meetings<br/>cases • decisions • accountability"]
-  B --> E["1:1 Coaching<br/>goals • obstacles"]
-  C --> F["Expert Speakers<br/>playbooks • benchmarks"]
-  C --> G["Networks<br/>hiring • vendors • deals"]
+  %% Classes / styling
+  classDef core fill:#0b4,color:#fff,stroke:#083,stroke-width:1.2;
+  classDef vist fill:#036,color:#fff,stroke:#024,stroke-width:1.2;
+  classDef ext  fill:#555,color:#fff,stroke:#333,stroke-width:1.2;
+  classDef outc fill:#600,color:#fff,stroke:#400,stroke-width:1.2;
+
+  subgraph ORG["Your Company<br/>(Portfolio Client)"]
+    O1["Strategy OKRs<br/>Roadmap"]:::core
+    O2["Exec Team<br/>Ops Leads"]:::core
+    O3["Risk Register<br/>Controls"]:::core
+  end
+
+  subgraph VIST["Vistage Platform"]
+    V1["Peer Group<br/>12–16 Execs"]:::vist
+    V2["Chair<br/>1:1 Coaching"]:::vist
+    V3["Expert Sessions<br/>Playbooks • Benchmarks"]:::vist
+    V4["Networks<br/>Talent • Vendors • Deals"]:::vist
+  end
+
+  subgraph MARKET["External"]
+    M1["Customers"]:::ext
+    M2["Vendors • Partners"]:::ext
+    M3["Board • Investors"]:::ext
+  end
+
+  O1 <---> V1
+  O2 <---> V2
+  O3 <---> V3
+  V4 --- O2
+  O2 --> M1
+  O2 --> M2
+  O1 --> M3
+
+  OUT["Outcomes<br/>Better Decisions • Faster Cycles • Lower Risk"]:::outc
+  O1 & O2 & O3 --> OUT
+  V1 & V2 & V3 & V4 --> OUT
 ````
 
-### b) Decision Flow to Join
+### 2) Monthly Governance & Decision Cycle (Sequence)
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant CXO as Fractional CXO
+  participant CH as Vistage Chair
+  participant PG as Peer Group
+  participant ET as Exec Team
+  participant BD as Board/Investors
+
+  CXO->>CH: Set monthly goals<br/>key decisions • risks
+  CH-->>CXO: Pre-work framing<br/>decision memo prompts
+  CXO->>PG: Present case<br/>options • constraints • ask
+  PG-->>CXO: Red-team critique<br/>assumptions • blind spots
+  CXO->>CH: 1:1 coaching<br/>commitments • metrics
+  CXO->>ET: Execute plan<br/>owners • ETA • budget
+  CXO->>BD: Update pack<br/>OKRs • ROI • risk deltas
+  Note over CXO,CH: Close the loop<br/>capture lessons • refresh backlog
+```
+
+### 3) Decision Pipeline with Risk & ROI Gates (Stage-Gated)
+
+```mermaid
+flowchart LR
+  classDef gate fill:#222,color:#fff,stroke:#111,stroke-width:1;
+  classDef step fill:#0b4,color:#fff,stroke:#083,stroke-width:1;
+  classDef risk fill:#820000,color:#fff,stroke:#5a0000,stroke-width:1;
+  classDef fin  fill:#004e82,color:#fff,stroke:#003b63,stroke-width:1;
+
+  IN["Intake<br/>Problem • Constraints"]:::step --> OP["Options<br/>3 viable paths"]:::step --> ANA["Analysis<br/>data • benchmarks"]:::step
+  ANA --> RG{"Risk Gate<br/>impact × likelihood"}:::risk
+  ANA --> ROI{"ROI Gate<br/>NPV • payback • sensitivity"}:::fin
+  RG -->|Pass| PREP["Decision Memo<br/>1-pager"]:::step
+  ROI -->|Pass| PREP
+  RG -->|Rework| OP
+  ROI -->|Rework| OP
+  PREP --> DEC{"Approve?"}:::gate
+  DEC -->|Yes| EXEC["Execution<br/>plan • owners • ETA"]:::step --> REV["Review<br/>OKRs • KPIs"]:::step
+  DEC -->|No/Defer| BKLG["Backlog<br/>parked with criteria"]:::step
+  REV --> IN
+```
+
+### 4) Value Realization Map (Inputs → Activities → Outcomes → Impact)
+
+```mermaid
+flowchart LR
+  classDef in  fill:#333,color:#fff;
+  classDef act fill:#036,color:#fff;
+  classDef out fill:#0b4,color:#fff;
+  classDef imp fill:#600,color:#fff;
+
+  I1["Inputs<br/>Dues • Time • Travel"]:::in --> A1["Activities<br/>Peer Sessions • 1:1s • Experts • Networks"]:::act
+  A1 --> O1["Outcomes<br/>Faster Decisions • Better Options • Fewer Surprises"]:::out
+  A1 --> O2["Capabilities<br/>Hiring • Vendor Access • Benchmarks"]:::out
+  O1 --> IMP1["Impact<br/>Revenue ↑ • Cycle Time ↓"]:::imp
+  O2 --> IMP2["Resilience<br/>Risk ↓ • Incident Cost ↓"]:::imp
+```
+
+### 5) Risk Escalation Playbook (State-Machine)
+
+```mermaid
+stateDiagram-v2
+  [*] --> Detect
+  Detect: Signals<br/>alerts • peer tips • chair coaching
+  Detect --> Triage: Severity assess
+  Triage --> Contain: High
+  Triage --> Monitor: Low/Medium
+  Contain --> Eradicate: Root cause • vendor actions
+  Eradicate --> Recover: Services • comms • SLA
+  Recover --> Learn: Post-mortem • controls
+  Learn --> [*]
+  Monitor --> Learn: Trend review
+```
+
+### 6) Cost & Commitment Profile (Pie)
+
+```mermaid
+pie title "Annual Commitment Mix (Illustrative)"
+  "Membership Dues" : 65
+  "Initiation/Fees" : 10
+  "Travel/Events" : 10
+  "Time Opportunity Cost" : 15
+```
+
+### 7) Join Decision — Multi-Path Evaluation
 
 ```mermaid
 flowchart TD
-  S["Define goals<br/>dealflow • leadership • blind spots"] --> F["Find Chairs<br/>region/sector fit"]
-  F --> V["Visit as Guest<br/>observe dynamics"]
-  V --> E["Evaluate Fit<br/>stage • confidentiality • challenge level"]
-  E -->|Strong fit| J["Join & Commit<br/>attendance • prep"]
-  E -->|Not fit| R["Try another group<br/>2–3 visits recommended"]
+  classDef gate fill:#222,color:#fff,stroke:#111,stroke-width:1;
+  classDef fit  fill:#0b4,color:#fff,stroke:#083,stroke-width:1;
+  classDef alt  fill:#444,color:#fff,stroke:#222,stroke-width:1;
+
+  G1["Define Objectives<br/>dealflow • leadership • blind spots"] --> G2["Shortlist Chairs<br/>region • sector • program"]
+  G2 --> VIS["Guest Visits<br/>1–2 sessions"]
+  VIS --> FIT{"Fit Gate<br/>challenge • confidentiality • chemistry"}:::gate
+  FIT -->|Strong| JOIN["Join & Commit<br/>attendance • prep • ROI tracking"]:::fit
+  FIT -->|Mixed| ALT1["Trial Another Group<br/>2–3 visits"]:::alt
+  FIT -->|Not Fit| ALT2["Alternative Network<br/>YPO • EO • industry assoc."]:::alt
+  JOIN --> PLAN["90-Day Onboarding<br/>goals • decisions • metrics"]:::fit
 ```
 
-### c) ROI Funnel (Inputs → Activities → Outcomes)
+### 8) Role & Responsibility Snapshot (RACI-style)
 
 ```mermaid
 flowchart LR
-  I["Inputs<br/>time • dues • travel"] --> A["Activities<br/>peer sessions • 1:1s • experts"]
-  A --> O1["Outcomes<br/>better decisions • faster cycles"]
-  A --> O2["Network leverage<br/>talent • vendors • partnerships"]
-  O1 --> R["Business Impact<br/>retention • revenue • risk reduction"]
+  classDef role fill:#1f2937,color:#fff,stroke:#111;
+  classDef resp fill:#0b4,color:#fff,stroke:#083;
+
+  subgraph Roles
+    CXO["Fractional CXO"]:::role
+    CH["Vistage Chair"]:::role
+    PG["Peer Group"]:::role
+    ET["Exec Team"]:::role
+    BD["Board/Investors"]:::role
+  end
+
+  CXO --> R1["Decision Memos<br/>options • risk • ROI"]:::resp
+  CH  --> R2["Facilitation • 1:1<br/>challenge • accountability"]:::resp
+  PG  --> R3["Red-Team Reviews<br/>pattern recognition"]:::resp
+  ET  --> R4["Execution<br/>owners • ETA • KPIs"]:::resp
+  BD  --> R5["Governance<br/>capital • strategy"]:::resp
+
+  R1 --> R4
+  R2 -. coaching .-> CXO
+  R3 --> R1
+  R5 --> CXO
+```
+
+### 9) Operating Rhythm Timeline (Month View)
+
+```mermaid
+gantt
+  title Monthly Operating Rhythm
+  dateFormat  YYYY-MM-DD
+  axisFormat  %b %d
+
+  section Pre-work
+  Case intake • data pack    :a1, 2025-09-01, 3d
+
+  section Peer Meeting
+  Chair prep • agenda        :a2, after a1, 1d
+  Peer session (all-day)     :milestone, m1, 2025-09-05, 1d
+
+  section Execution
+  Decision memo + plan       :a3, after m1, 2d
+  Team execution window      :a4, 2025-09-08, 12d
+
+  section Coaching & Review
+  1:1 with Chair             :a5, 2025-09-15, 1d
+  Metric review • next case  :a6, after a4, 1d
 ```
 
 ---
@@ -164,24 +325,23 @@ flowchart LR
 
 ## Compliance & Ethics
 
-* Respect confidentiality; avoid client-identifiable details. (Peer groups are confidential by design.) ([Vistage][1])
+* Respect confidentiality; avoid client-identifiable details. (Peer groups are confidential by design.) (\[Vistage]\[1])
 * Follow antitrust and conflict-of-interest guidelines; clarify vendor/solicitation rules with your Chair.
 
 ---
 
 ## Citations
 
-* Vistage approach & cadence; peer group size; elements: ([Vistage][2])
-* 1:1 coaching description: ([Vistage][3])
-* Members & countries; longevity: ([Vistage][4])
-* Home page stats & reach: ([Vistage][5])
-* Programs (Key Executive, Trusted Advisor): ([Vistage][6])
-* Networks description: ([Vistage][7])
-* Confidentiality norms: ([Vistage][1])
-* Pricing policy (not listed; program-dependent): ([Vistage][8])
-* Independent cost estimates (initiation + annual dues): ([Long Angle][9], [First Page Sage][10], [FounderGroups Blog][11])
+* Vistage approach & cadence; peer group size; elements: (\[Vistage]\[2])
+* 1:1 coaching description: (\[Vistage]\[3])
+* Members & countries; longevity: (\[Vistage]\[4])
+* Home page stats & reach: (\[Vistage]\[5])
+* Programs (Key Executive, Trusted Advisor): (\[Vistage]\[6])
+* Networks description: (\[Vistage]\[7])
+* Confidentiality norms: (\[Vistage]\[1])
+* Pricing policy (not listed; program-dependent): (\[Vistage]\[8])
+* Independent cost estimates (initiation + annual dues): (\[Long Angle]\[9], \[First Page Sage]\[10], \[FounderGroups Blog]\[11])
 
-```
 ```
 
 [1]: https://vistage.co.uk/membership/peer-advisory-groups/?utm_source=chatgpt.com "Peer Advisory Groups"
@@ -195,3 +355,4 @@ flowchart LR
 [9]: https://www.longangle.com/blog/vistage-vs-ypo?utm_source=chatgpt.com "Vistage vs. YPO (vs. Long Angle): Which is Right For You?"
 [10]: https://firstpagesage.com/uncategorized/vistage-worth-honest-review/?utm_source=chatgpt.com "Is Vistage Worth It? An Honest Review"
 [11]: https://blog.foundergroups.com/vistage-membership-requirements-and-cost/?utm_source=chatgpt.com "Vistage Membership Requirements and Cost"
+```
