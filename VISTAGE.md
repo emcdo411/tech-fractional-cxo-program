@@ -182,9 +182,6 @@ flowchart LR
 * Independent cost estimates (initiation + annual dues): ([Long Angle][9], [First Page Sage][10], [FounderGroups Blog][11])
 
 ```
-
-If you want, I can also tailor a **Chair outreach email** and a **30-day evaluation checklist** you can paste into the bottom of this README.
-::contentReference[oaicite:38]{index=38}
 ```
 
 [1]: https://vistage.co.uk/membership/peer-advisory-groups/?utm_source=chatgpt.com "Peer Advisory Groups"
