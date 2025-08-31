@@ -151,21 +151,21 @@ flowchart LR
   S1 --> S2 --> S3
   C1 --> C2 --> C3
 
-  G2 -.feeds metrics.-> F1
-  F2 -.benefits & ROI.-> C2
-  R1 -.risk posture.-> C2
-  S2 -.SLO/Incidents.-> C2
+  G2 -. "feeds metrics" .-> F1
+  F2 -. "benefits & ROI" .-> C2
+  R1 -. "risk posture" .-> C2
+  S2 -. "SLO/Incidents" .-> C2
 ```
 
 ### Risk → Finance Integration
 
 ```mermaid
 flowchart TD
-  A[Risk Register<br/>(module3_cyber_risk.md)] --> B[Quantify Impact in $<br/>(module2_finance.md)]
-  B --> C[Prioritize via RICE/WSJF<br/>(prioritization_rubric.md)]
-  C --> D[Budget & Sequencing<br/>(finops_playbook.md)]
-  D --> E[Benefits Tracking<br/>(benefits_tracker.csv)]
-  E --> F[Board/Investor Roll-up<br/>(board_pack_template.md, investor_update_template.md)]
+  A["Risk Register<br/>module3_cyber_risk.md"] --> B["Quantify Impact (USD)<br/>module2_finance.md"]
+  B --> C["Prioritize RICE/WSJF<br/>prioritization_rubric.md"]
+  C --> D["Budget & Sequencing<br/>finops_playbook.md"]
+  D --> E["Benefits Tracking<br/>benefits_tracker.csv"]
+  E --> F["Board/Investor Roll-up<br/>board_pack_template.md + investor_update_template.md"]
 ```
 
 ### Crisis → Communications Command
@@ -226,25 +226,25 @@ gantt
 
 ```mermaid
 flowchart LR
-  A[Vendor<br/>Identification] --> B[Security<br/>Questionnaire]
-  B --> C[Technical<br/>Assessment]
-  C --> D[Risk<br/>Scoring]
-  D --> E[Contract<br/>Negotiation]
-  E --> F[Ongoing<br/>Monitoring]
+  A["Vendor<br/>Identification"] --> B["Security<br/>Questionnaire"]
+  B --> C["Technical<br/>Assessment"]
+  C --> D["Risk<br/>Scoring"]
+  D --> E["Contract<br/>Negotiation"]
+  E --> F["Ongoing<br/>Monitoring"]
 ```
 
 ### Stakeholder Communication Matrix
 
 ```mermaid
 flowchart TD
-  A[Fractional CXO] --> B[CEO/Founder]
-  A --> C[Board Members]
-  A --> D[Investors]
-  A --> E[Department Heads]
-  B --> F[Weekly 1:1s]
-  C --> G[Monthly Reports]
-  D --> H[Quarterly Updates]
-  E --> I[Bi-weekly Standups]
+  A["Fractional CXO"] --> B["CEO/Founder"]
+  A --> C["Board Members"]
+  A --> D["Investors"]
+  A --> E["Department Heads"]
+  B --> F["Weekly 1:1s"]
+  C --> G["Monthly Reports"]
+  D --> H["Quarterly Updates"]
+  E --> I["Bi-weekly Standups"]
 ```
 
 ---
@@ -380,3 +380,8 @@ Licensed under **DACR-1.1** — see `LICENSE.md`.
 Copyright (c) **2025 Erwin Maurice McDonald**.
 
 ```
+
+**What changed (re: parsing):** node labels are now wrapped in quotes and special characters (`<br/>`, parentheses, `+`, etc.) are inside those quotes; replaced the raw `$` with **(USD)** to avoid parser quirks.
+::contentReference[oaicite:0]{index=0}
+```
+
