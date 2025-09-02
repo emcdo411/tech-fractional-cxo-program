@@ -1,0 +1,4 @@
+Scenario,Assumptions,Revenue,NetBurn,RunwayMonths,Notes
+Base,"WinRate Base; CAC Base; Hiring Base",placeholder,placeholder,placeholder,"Default operating plan"
+Conservative,"WinRate Low; CAC High; Hiring Freeze",placeholder,placeholder,placeholder,"Defensive posture"
+Aggressive,"WinRate High; CAC Base; Hiring +2",placeholder,placeholder,placeholder,"Growth push"

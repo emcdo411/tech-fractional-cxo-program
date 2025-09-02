@@ -1,0 +1,9 @@
+Driver,CurrentValue,Low,Base,High,Owner,Refresh
+PipelineCreated,placeholder,100000,150000,200000,Sales Ops,Weekly
+WinRate,placeholder,0.18,0.22,0.27,Sales,Monthly
+AvgDealSize,placeholder,7000,9000,11000,Sales,Monthly
+CAC,placeholder,700,800,900,Marketing Finance,Monthly
+ChurnRate,placeholder,0.02,0.025,0.03,CS,Monthly
+ActivationRate,placeholder,0.45,0.55,0.65,Product,Weekly
+HiringPlan,placeholder,0,2,4,People Ops,Quarterly
+PriceIndex,placeholder,0.95,1.00,1.05,Product,Quarterly
