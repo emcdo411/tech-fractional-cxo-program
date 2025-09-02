@@ -1,0 +1,11 @@
+Area,Control,Evidence,Owner,Status
+Governance,Board charter v2 saved,board_charter_v2.md,CIO,Open
+Governance,Decision log current,decision_log.md,COO,Open
+Security,MFA enforced,policy or admin screen,Security,Open
+Security,Backups tested,restore proof,IT,Planned
+Security,Access reviews done,manager sign off,IT,Planned
+Finance,Runway calc present,runway_calc.md,Finance,Open
+Finance,KPI tree current,kpi_tree.md,Analytics,Open
+Finance,Scenario table present,scenario_table.csv,Finance,Open
+Operations,Governance calendar current,governance_calendar.md,COO,Open
+Board,Board pack outline saved,board_pack_outline.md,CIO,Open
