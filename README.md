@@ -1,12 +1,11 @@
 # 🏛️ Tech CXO / Fractional CIO Executive Program (SMU CAPE–Inspired)
 
-![duration](https://img.shields.io/badge/Duration-6_to_8_weeks-blue)
+![duration](https://img.shields.io/badge/Duration-16_weeks-blue)
 ![mode](https://img.shields.io/badge/Mode-Portfolio_Building-green)
 ![level](https://img.shields.io/badge/Level-Executive-orange)
 ![tracks](https://img.shields.io/badge/Tracks-Strategy|Finance|Cyber|Ops|Gov-black)
 ![license](https://img.shields.io/badge/License-DACR-lightgrey)
 
-> **Recommended repo name:** `fractional-tech-cxo-excellence`  
 > **One-line value:** Boardroom-focused training and portfolio build for Fractional CIO/CTO/COO leaders—combining strategy, finance, cybersecurity, governance, and operating cadence into a repeatable, investor-credible system.
 
 ---
@@ -25,24 +24,38 @@ This program turns your repo into a **living portfolio** and training ground for
 By completion, you will be able to:
 1. **Govern** early-stage tech with lightweight boards, charters, and operating cadence.  
 2. **Model finance** (runway, CAC/LTV, scenario stress tests) to inform strategy.  
-3. **Secure & de-risk** with a pragmatic cybersecurity baseline (MFA, Zero Trust, vendor risk).  
+3. **Secure & de-risk** with a pragmatic cybersecurity baseline (MFA, least privilege, vendor risk).  
 4. **Operate** via OKRs/KPIs, executive scorecards, and incident playbooks.  
 5. **Communicate** with board-ready briefs, investor updates, and executive narratives.  
 6. **Deliver** a portfolio of artifacts that prove Fractional CXO capability.
 
 ---
 
-## 🧭 Syllabus (4 Modules)
+## 👥 Who This Is For
+Non-traditional leaders and emerging CXOs (no MBA required) entering or leveling up in early-stage tech. Comfort with basic Git is helpful.
+
+---
+
+## 🔧 System Requirements
+- Git (2.40+)  
+- VS Code (or your editor of choice)  
+- Windows **CMD** or **PowerShell** (macOS/Linux: Terminal)  
+- Optional: Mermaid preview extension for VS Code
+
+---
+
+## 🧭 Syllabus (4 Core Modules)
+> Modules repeat and deepen across 16 weeks. Weeks 1–4 establish foundations; later weeks extend finance, GTM, ops, and capstone.
 
 ### Module 1 — Role, Expectations, Organization & Governance
-- Fractional CxO mandate; scope vs. authority; advisory vs. delivery  
+- Fractional CXO mandate; scope vs. authority; advisory vs. delivery  
 - Lightweight governance: board/advisory cadence, decision rights, RACI, charters  
-- Founder alignment: equity, vesting, term sheets, “stop/go” criteria  
+- Founder alignment: guardrails, terming, “stop/go” criteria  
 - **Deliverables:** Governance Charter, Decision Rights Matrix, 30-60-90 Onboarding Plan
 
 ### Module 2 — Financial Planning & Partnering for Success
 - Runway math: burn, CAC/LTV, payback, unit economics; scenario modeling  
-- Partnering models: sweat equity, service credits, rev-share; protecting leverage  
+- Partnering models: sweat equity, service credits, rev-share  
 - Capital strategy: bootstrap vs. VC vs. non-dilutive; board implications  
 - **Deliverables:** Driver-based Financial Model, Capital Options Brief, KPI Tree
 
@@ -50,55 +63,62 @@ By completion, you will be able to:
 - Lean IT stack: identity, endpoint, cloud policy, vendor selection  
 - Security baseline: MFA, least privilege, secrets, SOC2-lite controls; vendor risk  
 - Risk program: register, heat-map, playbooks (outage, breach, data loss)  
-- **Deliverables:** Cyber Baseline (12-control checklist), Risk Register + Heatmap, Incident Playbook
+- **Deliverables:** Cyber Baseline (12 controls), Risk Register + Heatmap, Incident Playbook
 
 ### Module 4 — Performance, Operating Rhythm & Leadership Excellence
 - OKRs/KPIs, executive scorecards, weekly business review (WBR)  
 - Board communications: board pack, investor update, funding ask memo  
-- Transition paths: scale from fractional to FT or advisor; succession  
+- Transition paths: fractional → full-time/advisor; succession  
 - **Deliverables:** Board Pack, Monthly Investor Update, 90-Day Transformation Plan
 
 ---
 
-## 🗂 Repository Map
+## 🗓 Program Calendar (Illustrative)
+| Week | Focus | Core Deliverables |
+|---|---|---|
+| 1 | Governance Foundations | Charter v1, Decision Rights/RACI, 30-60-90 |
+| 2 | Board Comms | Decision Memo, Board Pack Outline, Governance Calendar |
+| 3 | Cyber/Risk Baseline | 12 Controls, Risk Register + Heatmap, Playbooks |
+| 4 | Finance Drivers | KPI Tree, Driver-Based Model (Runway) |
+| 5–8 | Deepening | Scenario stress tests; WBR → MBR; vendor risk program |
+| 9–12 | GTM & Ops | Exec scorecards, dashboards, cadence tune-ups |
+| 13–16 | Capstone | Board simulation, investor update, transformation plan |
 
+---
+
+## 🗂 Repository Map
 ```text
-fractional-tech-cxo-excellence/
+tech-fractional-cxo-program/
 │
 ├── README.md
-├── syllabus/
-│   ├── module1_governance.md
-│   ├── module2_finance.md
-│   ├── module3_cyber_risk.md
-│   └── module4_operating_rhythm.md
+├── Week01/ … Week16/           # daily lessons (Day01..Day07.md per week)
+│   └── DayXX.md                # objectives, activity, deliverables, DoD
 │
-├── case-studies/
-│   ├── founder_conflict.md
-│   ├── budget_vs_innovation.md
-│   ├── cyber_breach.md
-│   └── scaling_ops.md
-│
-├── tools/
-│   ├── fractional_cxo_toolkit.md
-│   ├── board_meeting_checklist.md
-│   ├── investor_update_template.md
-│   └── governance_matrix.md
-│
-├── simulations/
-│   ├── ai_decision_prompts.md
-│   └── crisis_wargame.md
-│
-└── resources/
-    ├── leadership_books.md
-    ├── startup_finance.md
-    └── cybersecurity_mustreads.md
+├── governance/                 # charters, decision rights, logs
+├── finance/                    # driver models, KPI tree, scenarios
+├── security/                   # baselines, identity access policy
+├── risk/                       # registers, heatmaps, vendor risk
+├── board/                      # decision memos, outlines, talk tracks
+├── operations/                 # onboarding, weekly reviews
+├── playbooks/                  # breach/outage playbooks
+├── case-studies/               # reflections, scenarios
+├── assets/                     # images by week (e.g., assets/week01/)
+└── tools/                      # checklists, templates
 ````
+
+---
+
+## 🧩 No-404 Asset Policy
+
+* Use **repo-relative paths** only (e.g., `assets/week01/...`, `Week01/Day01.md`).
+* If an asset doesn’t exist yet, write “placeholder” and create an empty file in the path.
+* Never paste external links into student deliverables.
 
 ---
 
 ## 🔧 Working Method — **Boardroom Workflows**
 
-> All diagrams below use `<br/>` inside nodes and render natively on GitHub.
+> Diagrams below use `<br/>` inside nodes and render natively on GitHub.
 
 ### 1) Program Operating Model — Ecosystem View
 
@@ -164,8 +184,8 @@ sequenceDiagram
 flowchart LR
   classDef gate fill:#222,color:#fff,stroke:#111,stroke-width:1;
   classDef step fill:#0b4,color:#fff,stroke:#083,stroke-width:1;
-  classDef risk fill:#820000,color:#fff,stroke:#5a0000,stroke-width:1;
-  classDef fin  fill:#004e82,color:#fff,stroke:#003b63,stroke-width:1;
+  classDef risk fill:#820000,color:#fff,stroke-width:1;
+  classDef fin  fill:#004e82,color:#fff,stroke-width:1;
 
   IN["Intake<br/>Problem • Context"]:::step --> OPT["Options<br/>min 3 credible paths"]:::step --> ANA["Analysis<br/>data • comps • risks"]:::step
   ANA --> RG{"Risk Gate<br/>impact × likelihood"}:::risk
@@ -303,36 +323,13 @@ pie title "Program Commitment Mix (Illustrative)"
 
 ---
 
-## 🧪 Case Studies (HBR-style, startup-focused)
+## ✅ Submission & Review
 
-* **Founder Conflict:** Decision rights vs. equity; role clarity; escalation path
-* **Budget vs. Innovation:** Tradeoffs under runway pressure; scenario prioritization
-* **Cyber Breach at Seed Stage:** MFA gaps, vendor risk, customer comms, legal exposure
-* **Scaling Ops:** 10→50 employees; hiring waves; OKR realignment; SOC2-lite roadmap
+* Submit weekly: `operations/weekXX_review_and_status.md`
+* All artifacts live under their week/module folders (repo-relative).
+* Acceptance criteria live in each Day file; **Definition of Done** must be checked before PR.
 
----
-
-## 🧰 Board-Ready Templates (in `/tools`)
-
-* **Board Pack (Monthly/Quarterly)** — agenda, KPIs, risks, decisions requested
-* **Investor Update** — highlights, runway, asks, KPI deltas, hiring, risks
-* **Governance Matrix (RACI)** — decision rights, escalation lanes, SLAs
-* **Fractional CXO Toolkit** — contract clauses, engagement model, exit criteria
-
----
-
-## 🧵 Simulations (in `/simulations`)
-
-* **AI Decision Prompts:** “You are the CIO presenting a funding ask…” (auto-generate exec memos)
-* **Crisis Wargame:** 60-minute breach/outage tabletop with roles, injects, and after-action review
-
----
-
-## 📚 Curated Resources (in `/resources`)
-
-* **Leadership:** Kotter, Drucker, Horowitz *The Hard Thing About Hard Things*
-* **Finance:** SaaS metrics, CAC/LTV, driver-based models, scenario planning
-* **Cyber:** NIST CSF, CIS Controls, vendor-risk playbooks, breach comms
+> **Anti-hallucination guardrail:** Use **“placeholder”** for unknown data. Do **not** invent real company or customer names.
 
 ---
 
@@ -352,14 +349,14 @@ pie title "Program Commitment Mix (Illustrative)"
 ## ⚡ Quickstart
 
 ```bash
-# 1) Create repo
-git clone https://github.com/<you>/fractional-tech-cxo-excellence.git
-cd fractional-tech-cxo-excellence
+# 1) Clone the repo
+git clone https://github.com/emcdo411/tech-fractional-cxo-program.git
+cd tech-fractional-cxo-program
 
-# 2) Create your first artifacts
-code syllabus/module1_governance.md tools/governance_matrix.md tools/board_meeting_checklist.md
+# 2) Open and explore
+code README.md
 
-# 3) Start with Module 1 (Governance), then commit your first Board Pack draft
+# 3) Start with Week01 (Governance), then commit your first Board Pack draft
 ```
 
 **Submission pattern:** Each module yields **named artifacts** (see Deliverables). Push early, iterate often, link to case studies.
@@ -370,6 +367,31 @@ code syllabus/module1_governance.md tools/governance_matrix.md tools/board_meeti
 
 This project uses the **DACR** (Defensive AI Commercial Rights) license. See `LICENSE`.
 Avoid committing secrets or private customer data. Use synthetic or redacted examples.
+
+---
+
+## 🧰 Board-Ready Templates (in `/tools`)
+
+* **Board Pack (Monthly/Quarterly)** — agenda, KPIs, risks, decisions requested
+* **Investor Update** — highlights, runway, asks, KPI deltas, hiring, risks
+* **Governance Matrix (RACI)** — decision rights, escalation lanes, SLAs
+* **Fractional CXO Toolkit** — contract clauses, engagement model, exit criteria
+
+---
+
+## 🧪 Case Studies (in `/case-studies`)
+
+* Founder Conflict — decision rights vs. equity; role clarity; escalation path
+* Budget vs. Innovation — tradeoffs under runway pressure; scenario prioritization
+* Cyber Breach at Seed Stage — MFA gaps, vendor risk, comms, legal exposure
+* Scaling Ops — 10→50 employees; hiring waves; OKR realignment; SOC2-lite roadmap
+
+---
+
+## 🧵 Simulations (in `/simulations`)
+
+* **AI Decision Prompts:** “You are the CIO presenting a funding ask…”
+* **Crisis Wargame:** 60-minute breach/outage tabletop with roles, injects, and after-action review
 
 ---
 
@@ -391,5 +413,13 @@ Avoid committing secrets or private customer data. Use synthetic or redacted exa
 
 ---
 
+## 🛣 Roadmap
+
+* **Week05–08:** Finance deep dives, scenario stress tests
+* **Week09–12:** GTM & Ops dashboards, exec scorecards
+* **Week13–16:** Capstone board simulation & investor update
+
 ```
+```
+
 
