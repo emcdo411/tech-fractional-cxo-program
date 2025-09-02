@@ -1,0 +1,6 @@
+Risk,Impact,Likelihood,Owner,Mitigation,Status
+Device loss,High,Medium,IT,Full disk encryption and MDM,Open
+Secret exposure,High,Low,Eng,Rotate keys and use secret store,Planned
+Vendor breach,High,Low,Ops,Vendor review and contract controls,Open
+Ransomware,High,Low,Sec,Backups and restore test,Planned
+Access creep,Medium,Medium,IT,Quarterly access reviews,Open

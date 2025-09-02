@@ -1,0 +1,6 @@
+Risk,ImpactScore,LikelihoodScore,Severity,Color
+Device loss,4,3,12,orange
+Secret exposure,5,2,10,orange
+Vendor breach,5,2,10,orange
+Ransomware,5,2,10,orange
+Access creep,3,3,9,yellow
