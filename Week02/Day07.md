@@ -74,14 +74,21 @@ Write a **two-paragraph update**:
 
 ```mermaid
 flowchart TD
-    A[Paper & Spreadsheets] --> B[Digital ERP Records]
-    B --> C[RPA Automation (OCR, AP/AR)]
-    C --> D[Machine Learning Analytics]
-    D --> E[Deep AI: Predictive + Audit Copilots]
+    A[User BI Question] --> B[BI Expert (exec_bi)]
+    B --> C{Select Chart Type?}
+    C -->|avg_p1_by_segment| D[Bar Chart: x=segment, y=avg_p1]
+    C -->|avg_p1_by_member_rating| E[Bar Chart: x=member_rating, y=avg_p1]
+    C -->|count_by_member_rating| F[Bar Chart: x=member_rating, y=count]
+    C -->|top_purchase_frequency| G[Bar Chart: x=segment, y=max_purchase_frequency]
+    C -->|other/unexpected| H[Generic Bar Chart]
 
-    style A fill:#f3f4f6,stroke:#374151,color:#111
-    style B fill:#3b82f6,stroke:#1e3a8a,color:#fff
-    style C fill:#10b981,stroke:#064e3b,color:#fff
-    style D fill:#9333ea,stroke:#581c87,color:#fff
-    style E fill:#111827,stroke:#facc15,color:#facc15
+    D --> I[Streamlit Dashboard]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    style A fill:#222,color:#fff,stroke:#555
+    style I fill:#111827,color:#facc15,stroke:#444
+
 ````
