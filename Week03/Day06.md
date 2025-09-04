@@ -1,30 +1,34 @@
-## Day06 — Incident Playbooks
+## Day06 — Incident Playbooks (CXO Edition)
 
 ### Objectives
-- Write **breach and outage playbooks** with clear roles  
-- Include detection, triage, contain, recover, learn  
+- Author **two playbooks** (Breach, Outage) with roles, triggers, evidence handling, containment, recovery, and after-action.
+- Define **on-call** and comms matrix; include **legal, PR, customer** tracks.
 
 ### Lesson Summary
-Simple playbooks reduce panic and delay.  
-Keep roles, steps, and comms lists ready and visible.
+Speed and clarity beat improvisation. Playbooks must direct **who does what by when**, preserve evidence, and communicate status to stakeholders. Build once, drill often.
 
-### Activity
-- Draft two short playbooks and list the **comms plan**  
-- Identify the **on-call contact** and backups  
+### Activities
+1) **Roles & Paging**: IRT lead, Comms lead, Legal, Forensics, SRE/Infra; define on-call rotation & escalation.
+2) **Triggers & First Hour**: Criteria to declare incident, initial triage, containment options, decision log.
+3) **Evidence & Chain of Custody**: What to collect, how to store, who can access.
+4) **Regulatory & Customer Comms**: Notification criteria/timelines, templates.
+5) **Recovery & Lessons**: Service restoration steps, data validation, post-incident review.
 
-### Deliverable
-- **Files**:  
-  - `playbooks/incident_playbook_breach.md`  
-  - `playbooks/incident_playbook_outage.md`  
-- **Sections**: Roles, Steps, Evidence, Communications, After Action  
+### Deliverables
+- **playbooks/incident_playbook_breach.md**
+- **playbooks/incident_playbook_outage.md**
+- **playbooks/comms_matrix.csv** (audience, channel, cadence, owner)
+- **playbooks/oncall_contacts.yml** (primary, secondary, backup)
+- **playbooks/evidence_checklist.md** (forensics, logs, snapshots)
+- **playbooks/decision_log.md** (timestamped decisions + rationale)
 
 ### Acceptance & QA
-- Each playbook lists an **on-call contact**  
-- Each lists **external counsel/advisor** if needed  
+- Each playbook names **on-call contact** and **external counsel/advisor** (if needed).
+- First-hour checklist present; paging path tested (screenshot of page).
+- Evidence checklist attached; chain-of-custody steps explicit.
+- Two notification templates (internal, external) included.
 
 ### Timebox
 - ⏱ 60 minutes
 
-
-## Timebox
-- 60 minutes
+---
