@@ -74,21 +74,23 @@ Write a **two-paragraph update**:
 
 ```mermaid
 flowchart TD
-    A[User BI Question] --> B[BI Expert (exec_bi)]
-    B --> C{Select Chart Type?}
-    C -->|avg_p1_by_segment| D[Bar Chart: x=segment, y=avg_p1]
-    C -->|avg_p1_by_member_rating| E[Bar Chart: x=member_rating, y=avg_p1]
-    C -->|count_by_member_rating| F[Bar Chart: x=member_rating, y=count]
-    C -->|top_purchase_frequency| G[Bar Chart: x=segment, y=max_purchase_frequency]
-    C -->|other/unexpected| H[Generic Bar Chart]
+  A[User BI Question] --> B[BI Expert (exec_bi)]
+  B --> C{Select Chart Type?}
 
-    D --> I[Streamlit Dashboard]
-    E --> I
-    F --> I
-    G --> I
-    H --> I
+  C -->|avg_p1_by_segment| D[Bar Chart: x=segment, y=avg_p1]
+  C -->|avg_p1_by_member_rating| E[Bar Chart: x=member_rating, y=avg_p1]
+  C -->|count_by_member_rating| F[Bar Chart: x=member_rating, y=count]
+  C -->|top_purchase_frequency| G[Bar Chart: x=segment, y=max_purchase_frequency]
+  C -->|other/unexpected| H[Generic Bar Chart]
 
-    style A fill:#222,color:#fff,stroke:#555
-    style I fill:#111827,color:#facc15,stroke:#444
+  D --> I[Streamlit Dashboard]
+  E --> I
+  F --> I
+  G --> I
+  H --> I
+
+  style A fill:#222,color:#fff,stroke:#555
+  style I fill:#111827,color:#facc15,stroke:#444
+
 
 ````
