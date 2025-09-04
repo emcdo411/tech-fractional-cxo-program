@@ -74,14 +74,14 @@ Write a **two-paragraph update**:
 
 ```mermaid
 flowchart TD
-  userQ[User BI Question] --> biExpert[BI Expert (exec_bi)]
-  biExpert --> chooser{Select Chart Type?}
+  userQ[User BI Question] --> biX[BI Expert]
+  biX --> chooser{Select Chart Type?}
 
-  chooser -->|avg_p1_by_segment| ctSeg[Bar Chart (x=segment; y=avg_p1)]
-  chooser -->|avg_p1_by_member_rating| ctRateAvg[Bar Chart (x=member_rating; y=avg_p1)]
-  chooser -->|count_by_member_rating| ctRateCnt[Bar Chart (x=member_rating; y=count)]
-  chooser -->|top_purchase_frequency| ctTopFreq[Bar Chart (x=segment; y=max_purchase_frequency)]
-  chooser -->|other_or_unexpected| ctGeneric[Generic Bar Chart]
+  chooser -->|avg_p1_by_segment| ctSeg[Bar x=segment; y=avg_p1]
+  chooser -->|avg_p1_by_member_rating| ctRateAvg[Bar x=member_rating; y=avg_p1]
+  chooser -->|count_by_member_rating| ctRateCnt[Bar x=member_rating; y=count]
+  chooser -->|top_purchase_frequency| ctTopFreq[Bar x=segment; y=max_purchase_frequency]
+  chooser -->|other_or_unexpected| ctGeneric[Generic Bar]
 
   ctSeg --> dash[Streamlit Dashboard]
   ctRateAvg --> dash
@@ -91,5 +91,6 @@ flowchart TD
 
   style userQ fill:#222,color:#fff,stroke:#555
   style dash fill:#111827,color:#facc15,stroke:#444
+
 
 ````
