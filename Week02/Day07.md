@@ -74,22 +74,22 @@ Write a **two-paragraph update**:
 
 ```mermaid
 flowchart TD
-  A[User BI Question] --> B[BI Expert (exec_bi)]
-  B --> C{Select Chart Type?}
+  userQ[User BI Question] --> biExpert[BI Expert (exec_bi)]
+  biExpert --> chooser{Select Chart Type?}
 
-  C -->|avg_p1_by_segment| D[Bar Chart (x=segment; y=avg_p1)]
-  C -->|avg_p1_by_member_rating| E[Bar Chart (x=member_rating; y=avg_p1)]
-  C -->|count_by_member_rating| F[Bar Chart (x=member_rating; y=count)]
-  C -->|top_purchase_frequency| G[Bar Chart (x=segment; y=max_purchase_frequency)]
-  C -->|other_or_unexpected| H[Generic Bar Chart]
+  chooser -->|avg_p1_by_segment| ctSeg[Bar Chart (x=segment; y=avg_p1)]
+  chooser -->|avg_p1_by_member_rating| ctRateAvg[Bar Chart (x=member_rating; y=avg_p1)]
+  chooser -->|count_by_member_rating| ctRateCnt[Bar Chart (x=member_rating; y=count)]
+  chooser -->|top_purchase_frequency| ctTopFreq[Bar Chart (x=segment; y=max_purchase_frequency)]
+  chooser -->|other_or_unexpected| ctGeneric[Generic Bar Chart]
 
-  D --> I[Streamlit Dashboard]
-  E --> I
-  F --> I
-  G --> I
-  H --> I
+  ctSeg --> dash[Streamlit Dashboard]
+  ctRateAvg --> dash
+  ctRateCnt --> dash
+  ctTopFreq --> dash
+  ctGeneric --> dash
 
-  style A fill:#222,color:#fff,stroke:#555
-  style I fill:#111827,color:#facc15,stroke:#444
+  style userQ fill:#222,color:#fff,stroke:#555
+  style dash fill:#111827,color:#facc15,stroke:#444
 
 ````
