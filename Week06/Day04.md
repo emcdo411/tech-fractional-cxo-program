@@ -61,13 +61,14 @@ flowchart LR
   PreReg --> Assign[Randomization / Switchback / Interleaving]
   Assign --> Run[Run & Log Telemetry]
   Run --> Guard[Guardrail Monitor]
-  Guard -- Breach --> Halt[Halt + Rollback]
-  Guard -- OK --> Analyze[Analysis (CUPED/AB)]
+  Guard --|Breach|--> Halt[Halt + Rollback]
+  Guard --|OK|--> Analyze[Analysis (CUPED/AB)]
   Analyze --> Decide{Ship?}
-  Decide -- Yes --> Launch[Promote + Comms]
-  Decide -- No --> Rollback
+  Decide --|Yes|--> Launch[Promote + Comms]
+  Decide --|No|--> Rollback
   Launch --> Archive[Registry + Immutable Results]
   Rollback --> Archive
+
 ````
 
 ---
