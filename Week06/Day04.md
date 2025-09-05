@@ -57,17 +57,17 @@ We encode a **scientific method for AI**: hypothesize → power → randomize �
 ## Experiment Architecture (Mermaid)
 ```mermaid
 flowchart LR
-  Hypo[Hypothesis + MDE + Power] --> PreReg[Pre-Register Plan]
-  PreReg --> Assign[Randomization / Switchback / Interleaving]
-  Assign --> Run[Run & Log Telemetry]
-  Run --> Guard[Guardrail Monitor]
-  Guard --|Breach|--> Halt[Halt + Rollback]
-  Guard --|OK|--> Analyze[Analysis (CUPED/AB)]
-  Analyze --> Decide{Ship?}
-  Decide --|Yes|--> Launch[Promote + Comms]
-  Decide --|No|--> Rollback
-  Launch --> Archive[Registry + Immutable Results]
-  Rollback --> Archive
+  hypo["Hypothesis + MDE + Power"] --> prereg["Pre-register plan"]
+  prereg --> assign["Randomization / Switchback / Interleaving"]
+  assign --> run["Run & log telemetry"]
+  run --> guard["Guardrail monitor"]
+  guard --|Breach|--> halt["Halt & rollback"]
+  guard --|OK|--> analyze["Analysis: CUPED & AB"]
+  analyze --> decide{"Ship?"}
+  decide --|Yes|--> launch["Promote and comms"]
+  decide --|No|--> rollback["Rollback"]
+  launch --> archive["Registry & immutable results"]
+  rollback --> archive
 
 ````
 
