@@ -1,22 +1,28 @@
-Fractional CXO Daily Feed (TL;DR / TL;DW 20-Minute Sprints)
+# Fractional CXO Daily Feed — TL;DR / TL;DW (20-Minute Sprints)
 
-Suggested filename: toolkit/fractional_cxo_daily_feed_prompt.md
+**Suggested filename:** `toolkit/fractional_cxo_daily_feed_prompt.md`
+**Use case:** Daily, skimmable intel + LinkedIn drafts for aspiring fractional CXOs from non-traditional backgrounds.
 
-Purpose
+---
 
-A copy-paste prompt that generates a 5-minute daily rundown for aspiring fractional CXOs from non-traditional backgrounds—plus two Top-Voice-style LinkedIn drafts (AM/PM). Designed for any AI tool with web access/browsing.
+## Why this exists
 
-How to use
+A copy-paste prompt that generates a **5-minute daily rundown** (news + signals + exec stats) **and** two **Top-Voice-style LinkedIn drafts** (AM/PM). Works with any AI assistant that has **web browsing**.
 
-Open your browsing-enabled AI tool.
+---
 
-Paste the prompt below.
+## How to use (quick)
 
-(Optional) Edit the Config block (region, sectors, tickers).
+* Open your **browsing-enabled** AI tool.
+* Paste the **Prompt** below.
+* (Optional) Tweak the **CONFIG** block (region, sectors, tickers).
+* Publish the AM/PM LinkedIn drafts (put links in the **first comment**).
 
-Publish the AM/PM LinkedIn drafts (keep links in the first comment).
+---
 
-Copy/Paste Prompt
+## Prompt (copy/paste)
+
+```text
 Act as a **best-in-class fractional CXO** (AI/Data/Sec/Product) writing for ambitious operators from **non-traditional backgrounds**. Pull today’s most relevant items across:
 1) AI policy & privacy (EU AI Act/GDPR/US regs),
 2) Enterprise AI architecture (RAG, evals, guardrails, FinOps),
@@ -69,9 +75,41 @@ Sectors: SaaS, healthcare, finance, automotive, public sector
 Tickers: SPY, QQQ, MSFT, NVDA (add your watchlist)
 Tone: pragmatic, inclusive, board-ready
 Cadence: Generate daily; publish LinkedIn AM/PM 3×/week
+```
 
-Posting cadence (recommended)
+---
 
-Mon/Wed/Fri → AM insight post; PM follow-up with late-day development or earnings/policy angle.
+## Output structure at a glance
 
-Keep source links in the first comment to maximize reach.
+* **Snapshot** → market in 90 seconds
+* **Must-Reads** → 3–5 items, each ≤2 lines
+* **Tech Briefs** → 3 deployable levers
+* **Signals** → policy/vendor/outage watchlist
+* **Fast Stats** → 3 clean, quantified bullets
+* **20-Min Sprint** → read/skim/watch with “so what”
+* **People Note** → inclusive story for momentum
+* **Two LinkedIn Drafts** → AM/PM, Top-Voice style + first-comment sources
+
+---
+
+## Posting cadence (recommended)
+
+* **Mon / Wed / Fri** → AM insight post; PM follow-up on late-day earnings/policy/launch.
+* Keep **all links** in the **first comment** to maximize reach.
+
+---
+
+## First-comment template (paste under each LinkedIn post)
+
+```
+Sources & Further Reading:
+• <Outlet> — <Title> (<Date>): <URL>
+• <Outlet> — <Title> (<Date>): <URL>
+• <Outlet> — <Title> (<Date>): <URL>
+
+Question for you:
+• What would you ship (or stop) this week based on this data?
+```
+
+---
+
