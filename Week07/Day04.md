@@ -31,19 +31,21 @@ Create a traceable **per-request bill**.
 
 **Unit Cost per Request (UCR)**
 
-$$
-\text{UCR} = C_\text{input} + C_\text{gen} + C_\text{retr} + C_\text{rerank} + C_\text{vector I/O} + C_\text{orchestration} + C_\text{HITL}
-$$
+```
+UCR = C_input + C_gen + C_retr + C_rerank + C_vectorIO + C_orchestration + C_HITL
+```
 
 **Breakdown**
 
-* $C_\text{input} = \frac{\text{prompt\_tokens}}{1000} \times P_\text{in}$
-* $C_\text{gen} = \frac{\text{generation\_tokens}}{1000} \times P_\text{out}$
-* $C_\text{retr} = \text{queries} \times P_\text{retrieval@k}$
-* $C_\text{rerank} = \text{candidates} \times P_\text{rerank}$
-* $C_\text{vector I/O} = \text{reads+writes} \times P_\text{vector}$
-* $C_\text{orchestration}$ (hosting, tracing, logs) = **allocated** per request
-* $C_\text{HITL}$ (if used) = **minutes × rate**
+```
+C_input          = (prompt_tokens / 1000) * P_in
+C_gen            = (generation_tokens / 1000) * P_out
+C_retr           = queries * P_retrieval_at_k
+C_rerank         = candidates * P_rerank
+C_vectorIO       = (reads + writes) * P_vector
+C_orchestration  = allocated_overhead_per_request
+C_HITL           = minutes * rate
+```
 
 **Trace fields to log per request**
 `use_case_id, ts, model_id, prompt_tokens, gen_tokens, depth_k, rerank_n, cache_hit(bool), latency_ms, unit_cost_usd`
@@ -194,4 +196,5 @@ spend_slo:
 * **Boring invoices, happy CFO:** Spend tracks forecast within **±5%**.
 * **One-click controls:** Change model mix, depth-k, and cache policy without code changes.
 * **Freedom to negotiate:** Exit ramp makes vendor changes **low-risk, two-week** events—not rewrites.
+
 
